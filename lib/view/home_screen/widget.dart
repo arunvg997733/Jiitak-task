@@ -29,7 +29,7 @@ class PostContainerWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: kCwhite,
               ),
-              height: width * 1.15,
+              height: width * 1.25,
               width: double.infinity,
               child: Column(
                 children: [
@@ -74,7 +74,7 @@ class PostContainerWidget extends StatelessWidget {
                               ),
                             ),
                             textWidget(
-                              text: '¥ 6,000',
+                              text: index == 0 ?'¥ 6,000':'6,000円 ',
                               color: kBlack,
                               size: 20.sp,
                               weight: FontWeight.bold,

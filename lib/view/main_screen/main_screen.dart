@@ -8,6 +8,7 @@ import 'package:jiitaktask/view/home_screen/home_screen.dart';
 import 'package:jiitaktask/view/message_screen/message_screen.dart';
 import 'package:jiitaktask/view/profile_screen/profile_screen.dart';
 import 'package:jiitaktask/view/stamp_screen/stamp_screen.dart';
+import 'package:jiitaktask/view/widget/widget.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
@@ -25,7 +26,13 @@ class MainScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      body: SafeArea(child: Obx(() => homePages[getNav.currentIndex.value])),
+      body: SafeArea(child: Obx(() => Stack(
+        children: [
+          homePages[getNav.currentIndex.value],
+          getNav.currentIndex.value == 0?const LocationWidget():const SizedBox()
+        ],
+      ))
+      ),
       floatingActionButton: InkWell(
         onTap: () {
           getNav.onTap(2);
@@ -81,6 +88,30 @@ class MainScreen extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
+  }
+}
+
+class LocationWidget extends StatelessWidget {
+  const LocationWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      bottom: 50,
+      right: 20,
+      child: Container(
+        height: 70,
+        width: 70,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50.sp),
+          color: kWhite,
+          boxShadow: const [BoxShadow(blurRadius: 10,color: kGrey)]
+        ),
+        child: iconWidget(icon: Icons.location_on_outlined, color: kBlack, size: 35),
+      ),
     );
   }
 }
