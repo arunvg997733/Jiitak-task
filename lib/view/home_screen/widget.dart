@@ -73,7 +73,7 @@ class PostContainerWidget extends StatelessWidget {
                               ),
                             ),
                             textWidget(
-                              text: index == 0 ?'¥ 6,000':'6,000円 ',
+                              text: index == 0 ? '¥ 6,000' : '6,000円 ',
                               color: kBlack,
                               size: 20.sp,
                               weight: FontWeight.bold,

@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   RxInt currentIndex = 0.obs;
-  List<bool> likeList = [false,false,false,false,false,false];
+  List<bool> likeList = [false, false, false, false, false, false];
   List<String> calenderChineseList = [
     '木',
     '金',
@@ -75,11 +75,11 @@ class HomeController extends GetxController {
     update();
   }
 
-  likeUnlike(int index){
-    if(likeList[index] == false ){
+  likeUnlike(int index) {
+    if (likeList[index] == false) {
       likeList[index] = true;
       Get.snackbar("Success", "liked");
-    }else{
+    } else {
       likeList[index] = false;
       Get.snackbar("Success", "Disliked");
     }

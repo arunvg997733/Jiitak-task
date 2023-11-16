@@ -22,7 +22,11 @@ class HomeScreen extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (context, index) {
-              return PostContainerWidget(width: width, getHome: getHome,index: index,);
+              return PostContainerWidget(
+                width: width,
+                getHome: getHome,
+                index: index,
+              );
             },
             itemCount: 6,
           )
@@ -31,5 +35,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

@@ -49,7 +49,7 @@ class ListTileWidget extends StatelessWidget {
             children: [
               textWidget(text: 'スタンプを獲得しました。', color: kBlack, size: 12.sp),
               textWidget(
-                  text: index != 4 ?'1 個':'',
+                  text: index != 4 ? '1 個' : '',
                   color: kBlack,
                   size: 15.sp,
                   weight: FontWeight.bold)

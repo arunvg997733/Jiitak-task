@@ -26,13 +26,15 @@ class MainScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      body: SafeArea(child: Obx(() => Stack(
-        children: [
-          homePages[getNav.currentIndex.value],
-          getNav.currentIndex.value == 0?const LocationWidget():const SizedBox()
-        ],
-      ))
-      ),
+      body: SafeArea(
+          child: Obx(() => Stack(
+                children: [
+                  homePages[getNav.currentIndex.value],
+                  getNav.currentIndex.value == 0
+                      ? const LocationWidget()
+                      : const SizedBox()
+                ],
+              ))),
       floatingActionButton: InkWell(
         onTap: () {
           getNav.onTap(2);
@@ -106,11 +108,11 @@ class LocationWidget extends StatelessWidget {
         height: 70,
         width: 70,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50.sp),
-          color: kWhite,
-          boxShadow: const [BoxShadow(blurRadius: 10,color: kGrey)]
-        ),
-        child: iconWidget(icon: Icons.location_on_outlined, color: kBlack, size: 35),
+            borderRadius: BorderRadius.circular(50.sp),
+            color: kWhite,
+            boxShadow: const [BoxShadow(blurRadius: 10, color: kGrey)]),
+        child: iconWidget(
+            icon: Icons.location_on_outlined, color: kBlack, size: 35),
       ),
     );
   }
