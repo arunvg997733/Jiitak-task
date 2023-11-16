@@ -29,7 +29,6 @@ class PostContainerWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: kCwhite,
               ),
-              height: width * 1.25,
               width: double.infinity,
               child: Column(
                 children: [
